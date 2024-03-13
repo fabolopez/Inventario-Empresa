@@ -5,7 +5,7 @@
     Public com As New OleDb.OleDbCommand
 
 
-    Function ConectarDB()
+    Private Sub ConectarDB()
         Try
             conex.Open()
             com.Connection = conex
@@ -19,17 +19,17 @@
             End If
 
         End Try
-    End Function
+    End Sub
 
 
-    Function limpiarTextBox()
 
-    End Function
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConectarDB()
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+
+        conex.Close()
         Application.Exit()
     End Sub
 
